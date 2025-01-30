@@ -10,6 +10,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import toggle from "@/assets/svg/Toggle.svg";
+import SearchIcon from "@/assets/svg/SearchIcon.svg";
+import ShoppingBag from "@/assets/svg/ShoppingBag.svg";
+import { Button } from "../ui/button";
 
 const Navbar = () => {
   return (
@@ -28,6 +31,23 @@ const Navbar = () => {
                 </li>
               </ul>
             ))}
+            <Button className="bg-transparent hover:bg-transparent shadow-none px-0">
+              <img
+                src={SearchIcon}
+                alt="search"
+                width={25}
+                className="hidden md:inline-block invert pb-3"
+              />
+            </Button>
+            {/* Don't forget to add the link to the cart */}
+            <Link to="/cart">
+              <img
+                src={ShoppingBag}
+                alt="Shopping Bag"
+                width={25}
+                className="hidden md:block invert"
+              />
+            </Link>
 
             {/* Mobile Navbar */}
             <Sheet>
