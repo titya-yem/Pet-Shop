@@ -15,7 +15,7 @@ const Phone = ({ title, link }: PhoneSVGProps) => {
       <div className="w-7 h-7 bg-[#FFD044] rounded-full flex items-center justify-center">
         <img src={phoneIcon} alt="phone icon" />
       </div>
-      <p className="text-[#FFD044]">{title}</p>
+      <p className="text-sm md:base text-[#FFD044]">{title}</p>
     </Link>
   );
 };

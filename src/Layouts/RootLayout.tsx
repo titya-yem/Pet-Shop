@@ -1,3 +1,4 @@
+import HeroCat from "@/components/HeroCat";
 import Navbar from "@/components/shared/Navbar";
 import { Outlet } from "react-router-dom";
 
@@ -6,6 +7,7 @@ const RootLayout = () => {
     <>
       <Navbar />
       <Outlet />
+      <HeroCat />
     </>
   );
 };
