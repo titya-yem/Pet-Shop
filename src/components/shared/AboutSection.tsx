@@ -1,7 +1,7 @@
 import { Box, Container, Flex } from "@radix-ui/themes";
 import aboutImage from "@/assets/image/About-image.png";
-import circle from "@/assets/svg/PositiveCircle.svg.svg";
-import LinkButton from "./shared/LinkButton";
+import circle from "@/assets/svg/PositiveCircle.svg";
+import LinkButton from "./LinkButton";
 
 const AboutSection = () => {
   return (
@@ -12,7 +12,7 @@ const AboutSection = () => {
         </Box>
 
         <Box className="md:w-1/2 space-y-6 *:text-center *:md:text-left">
-          <h1 className="uppercase text-2xl lg:text-3xl font-bold">About Us</h1>
+          <h1 className="uppercase text-2xl lg:text-4xl font-bold">About Us</h1>
           <p className="text-sm lg:text-base">
             Until one has loved an animal, a part of one’s soul remain
             unawakened. We believe in it and we believe in easy access to things
@@ -41,7 +41,7 @@ const AboutSection = () => {
             </Box>
           </Box>
 
-          <LinkButton link="about" />
+          <LinkButton link="about" name="Mroe About Us" className="mx-auto" />
         </Box>
       </div>
     </Container>
