@@ -11,7 +11,7 @@ interface LinkButtonProps {
 const LinkButton = ({ link, className, name, classname }: LinkButtonProps) => {
   return (
     <div className={`${classname}`}>
-      <Button className={`bg-[#D4493A] py-6 px-10 font-semibold ${className}`}>
+      <Button className={`bg-[#D4493A] py-6 px-10 font-semibold hover:bg-[#c52b1a] ${className}`}>
         <Link to={`/${link}`}>{name}</Link>
       </Button>
     </div>
