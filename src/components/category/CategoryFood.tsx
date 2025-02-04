@@ -1,6 +1,6 @@
 import { Products } from "@/constants";
 import { Box, Flex } from "@radix-ui/themes";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button"
 import star from "@/assets/svg/Star.svg";
 
 type categoryProps = {

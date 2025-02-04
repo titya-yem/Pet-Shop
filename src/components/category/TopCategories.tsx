@@ -6,12 +6,12 @@ import catImage from "@/assets/svg/CircleCat.svg";
 import dogImage from "@/assets/svg/CircleDog.svg";
 import birdImage from "@/assets/svg/CircleBird.svg";
 import fishImage from "@/assets/svg/CircleFish.svg";
-import LinkButton from "./shared/LinkButton";
+import LinkButton from "../shared/LinkButton";
 import birds from "@/assets/image/Category-birds.png";
 import CategoryFood from "./CategoryFood";
 import leftArrow from "@/assets/svg/BackwardArrow.svg";
 import rightArrow from "@/assets/svg/ForwardArrow.svg";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { Products } from "@/constants";
 
 const TopCategories = () => {
@@ -43,7 +43,7 @@ const TopCategories = () => {
   }, []);
 
   return (
-    <Container className="pt-10 bg-[#FAD046]">
+    <Container className="py-10 bg-[#FAD046]">
       <Box className="relative">
         <h1 className="uppercase text-2xl lg:text-4xl text-center font-bold">
           Top Categories
