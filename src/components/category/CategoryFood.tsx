@@ -1,7 +1,10 @@
 import { Products } from "@/constants";
 import { Box, Flex } from "@radix-ui/themes";
-import { Button } from "../ui/button"
+import { Button } from "../ui/button";
 import star from "@/assets/svg/Star.svg";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/slices/Cart-Slice";
+import { AppDispatch } from "@/store/store";
 
 type categoryProps = {
   startIndex: number;
@@ -9,6 +12,8 @@ type categoryProps = {
 };
 
 const CategoryFood = ({ startIndex, itemsToShow }: categoryProps) => {
+  const dispatch = useDispatch<AppDispatch>();
+
   return (
     <div className="flex justify-between items-center overflow-hidden w-[85%]">
       {Products.slice(startIndex, startIndex + itemsToShow).map((item) => (
@@ -38,7 +43,20 @@ const CategoryFood = ({ startIndex, itemsToShow }: categoryProps) => {
                     <span>{item.rating}</span>
                   </Flex>
                 </Flex>
-                <Button className="!text-black bg-[#FAD046] hover:bg-[#ffca1e] py-5 px-11 mb-3">
+                <Button
+                  className="!text-black bg-[#FAD046] hover:bg-[#ffca1e] py-5 px-11 mb-3"
+                  onClick={() =>
+                    dispatch(
+                      addToCart({
+                        id: item.id,
+                        name: item.name,
+                        price: item.price,
+                        image: item.image,
+                        quantity: 1,
+                      })
+                    )
+                  }
+                >
                   Add To Cart
                 </Button>
               </Flex>

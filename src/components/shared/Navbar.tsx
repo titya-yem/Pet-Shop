@@ -13,8 +13,14 @@ import toggle from "@/assets/svg/Toggle.svg";
 import SearchIcon from "@/assets/svg/SearchIcon.svg";
 import ShoppingBag from "@/assets/svg/ShoppingBag.svg";
 import { Button } from "../ui/button";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 const Navbar = () => {
+  const totalQuantity = useSelector(
+    (state: RootState) => state.cart.totalQuantity
+  );
+
   return (
     <>
       <Container className="bg-[#e3462c]">
@@ -39,14 +45,19 @@ const Navbar = () => {
                 className="hidden md:inline-block invert pb-3"
               />
             </Button>
-            {/* Don't forget to add the link to the cart */}
-            <Link to="/cart">
+
+            <Link to="/cart" className="relative">
               <img
                 src={ShoppingBag}
                 alt="Shopping Bag"
                 width={25}
                 className="hidden md:block invert"
               />
+              {totalQuantity > 0 && (
+                <span className="absolute bottom-2 left-3 bg-yellow-400 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  {totalQuantity}
+                </span>
+              )}
             </Link>
 
             {/* Mobile Navbar */}
