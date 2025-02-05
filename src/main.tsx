@@ -16,12 +16,15 @@ import ServicesLayout from "./Layouts/ServicesLayout.tsx";
 import ServicesPage from "./pages/ServicesPage.tsx";
 import ContactLayout from "./Layouts/ContactLayout.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
+import Navbar from "./components/shared/Navbar.tsx";
+import Footer from "./components/shared/Footer.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
       <Theme appearance="inherit">
         <BrowserRouter>
+          <Navbar />
           <Routes>
             <Route path="/" element={<RootLayout />}>
               <Route index element={<HomePage />} />
@@ -39,6 +42,7 @@ createRoot(document.getElementById("root")!).render(
               <Route index element={<ContactPage />} />
             </Route>
           </Routes>
+          <Footer />
         </BrowserRouter>
       </Theme>
     </Provider>

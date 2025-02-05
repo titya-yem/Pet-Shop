@@ -9,14 +9,14 @@ import bearing from "@/assets/svg/products/Bearing.svg";
 
 const OurBrands = () => {
   return (
-    <Box className="h-[580px] md:h-[480px] bg-[#E3462C]">
+    <Box className="h-[650px] md:h-[480px] bg-[#E3462C]">
       <Container>
         <Box>
           <h1 className="text-2xl lg:text-4xl mx-auto pt-10 md:my-4 lg:mb-14 text-center font-bold uppercase text-white">
             What our clients say about us
           </h1>
         </Box>
-        <Box className="mt-10 md:mt-20">
+        <Box className="mt-10 md:mt-12">
           <Flex
             justify="between"
             align="center"
