@@ -2,6 +2,7 @@ import dollarCircle from "@/assets/svg/DollarCircle.svg";
 import { serviceLists } from "@/constants/service";
 import { Box, Container, Flex, Text } from "@radix-ui/themes";
 import { Button } from "./ui/button";
+import { Link } from "react-router";
 
 interface ServicesCardsProps {
   image: string;
@@ -10,7 +11,6 @@ interface ServicesCardsProps {
 
 const ServicesCards: React.FC<ServicesCardsProps> = ({ image, index }) => {
   const service = serviceLists[index];
-
   if (!service) return null;
 
   return (
@@ -30,21 +30,27 @@ const ServicesCards: React.FC<ServicesCardsProps> = ({ image, index }) => {
           <Text as="p" className="text-sm lg:text-base text-[#e9e3d3] w-[90%]">
             {service.text}
           </Text>
+
+          {/* Buttons */}
           <Flex gapX="4" className="md:pt-4">
-            <Button className="bg-[#FBF3DF] hover:bg-[#eae0c6] text-black">
-              <img src={dollarCircle} alt="Currency price USD" />
-              {service.price}
-            </Button>
-            <Button className="bg-[#FBF3DF] hover:bg-[#eae0c6] text-black">
-              {service.duration}
-              <span>
-                {service.duration === 1
-                  ? "day"
-                  : service.duration! > 1
-                  ? "days"
-                  : "hours"}
-              </span>
-            </Button>
+            <Link to="/appointment">
+              <Button className="bg-[#FBF3DF] hover:bg-[#eae0c6] text-black">
+                <img src={dollarCircle} alt="Currency price USD" />
+                {service.price}
+              </Button>
+            </Link>
+
+            <Link to="/services">
+              <Button className="bg-[#FBF3DF] hover:bg-[#eae0c6] text-black">
+                {service.duration ?? 0}
+                <span>
+                  {typeof service.duration === "number" &&
+                  service.duration === 1
+                    ? " day"
+                    : " hours"}
+                </span>
+              </Button>
+            </Link>
           </Flex>
         </Box>
       </Flex>

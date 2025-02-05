@@ -20,7 +20,7 @@ const HeroCat: React.FC = () => {
           <img
             src={catFoodProduct}
             alt="cat food product iamge"
-            className="relative bottom-32 lg:bottom-36 left-16 hidden lg:block w-[300px] lg:w-[340px]"
+            className="relative bottom-20 lg:bottom-[100px] left-16 hidden lg:block w-[300px] lg:w-[340px]"
           />
         </Flex>
 

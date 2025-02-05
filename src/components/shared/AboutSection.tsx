@@ -41,7 +41,11 @@ const AboutSection = () => {
             </Box>
           </Box>
 
-          <LinkButton link="about" name="Mroe About Us" className="mx-auto" />
+          <LinkButton
+            link="services"
+            name="Explore Our Services"
+            className="mx-auto"
+          />
         </Box>
       </div>
     </Container>

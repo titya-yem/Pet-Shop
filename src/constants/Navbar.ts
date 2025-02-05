@@ -9,8 +9,8 @@ export const NavbarLists: NavbarList[] = [
     link: "/",
   },
   {
-    label: "About",
-    link: "/about",
+    label: "Appointment",
+    link: "/appointment",
   },
   {
     label: "Shop",

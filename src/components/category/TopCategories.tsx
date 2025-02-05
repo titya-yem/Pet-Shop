@@ -73,7 +73,7 @@ const TopCategories = () => {
           <Button
             onClick={handleBackward}
             disabled={startIndex === 0} // Disable if at the start
-            className="border border-black shadow-md bg-transparent px-2 py-2 hover:bg-transparent rounded-sm"
+            className="border border-gray-300 shadow-md bg-transparent px-2 py-2 hover:bg-transparent rounded-sm"
           >
             <img
               src={leftArrow}
@@ -90,7 +90,7 @@ const TopCategories = () => {
           <Button
             onClick={handleForward}
             disabled={startIndex + itemsToShow >= Products.length} // Disable if at the end
-            className="border border-black shadow-md bg-transparent px-2 py-2 hover:bg-transparent rounded-sm"
+            className="border border-gray-300 shadow-md bg-transparent px-2 py-2 hover:bg-transparent rounded-sm"
           >
             <img
               src={rightArrow}

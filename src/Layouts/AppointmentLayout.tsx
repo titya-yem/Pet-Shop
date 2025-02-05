@@ -1,13 +1,13 @@
 import Navbar from "@/components/shared/Navbar";
 import { Outlet } from "react-router-dom";
 
-const AboutLayout = () => {
+const AppointmentLayout = () => {
   return (
     <>
-    <Navbar />
+      <Navbar />
       <Outlet />
     </>
   );
 };
 
-export default AboutLayout;
+export default AppointmentLayout;
