@@ -3,7 +3,12 @@ import { serviceLists } from "@/constants/service";
 import { Box, Container, Flex, Text } from "@radix-ui/themes";
 import { Button } from "./ui/button";
 
-const ServicesCards = ({ image, index }: { image: string; index: number }) => {
+interface ServicesCardsProps {
+  image: string;
+  index: number;
+}
+
+const ServicesCards: React.FC<ServicesCardsProps> = ({ image, index }) => {
   const service = serviceLists[index];
 
   if (!service) return null;
@@ -19,7 +24,9 @@ const ServicesCards = ({ image, index }: { image: string; index: number }) => {
           />
         </Box>
         <Box className="space-y-3">
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold">{service.title}</h1>
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold">
+            {service.title}
+          </h1>
           <Text as="p" className="text-sm lg:text-base text-[#e9e3d3] w-[90%]">
             {service.text}
           </Text>

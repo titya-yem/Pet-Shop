@@ -2,7 +2,7 @@ import { Box, Container, Flex } from "@radix-ui/themes";
 import heroCat from "@/assets/image/hero-cat.png";
 import catFoodProduct from "@/assets/image/hero-food.png";
 
-const HeroCat = () => {
+const HeroCat: React.FC = () => {
   return (
     <Container className="h-28 md:h-44 w-full bg-[#182317]">
       <Flex className="h-full items-center lg:items-start justify-center md:justify-between">

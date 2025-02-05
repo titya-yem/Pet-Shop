@@ -4,8 +4,11 @@ import Navbar from "@/components/shared/Navbar";
 import { Outlet } from "react-router-dom";
 import TopCategories from "@/components/category/TopCategories";
 import Services from "@/components/Services";
+import Recommendation from "@/components/Recommendation";
+import React from "react";
+import OurBrands from "@/components/OurBrands";
 
-const RootLayout = () => {
+const RootLayout: React.FC = () => {
   return (
     <>
       <Navbar />
@@ -14,6 +17,8 @@ const RootLayout = () => {
       <AboutSection />
       <TopCategories />
       <Services />
+      <Recommendation />
+      <OurBrands />
     </>
   );
 };
