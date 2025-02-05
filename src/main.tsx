@@ -8,8 +8,7 @@ import { store } from "./store/store.ts";
 import HomePage from "./pages/HomePage.tsx";
 import RootLayout from "./Layouts/RootLayout.tsx";
 import { Theme } from "@radix-ui/themes";
-import AboutLayout from "./Layouts/AppointmentLayout.tsx";
-import AboutPage from "./pages/AppointmentPage.tsx";
+import AppointmentPage from "./pages/AppointmentPage.tsx";
 import ShopLayout from "./Layouts/ShopLayout.tsx";
 import ShopPage from "./pages/ShopPage.tsx";
 import ServicesLayout from "./Layouts/ServicesLayout.tsx";
@@ -29,9 +28,7 @@ createRoot(document.getElementById("root")!).render(
             <Route path="/" element={<RootLayout />}>
               <Route index element={<HomePage />} />
             </Route>
-            <Route path="/about" element={<AboutLayout />}>
-              <Route index element={<AboutPage />} />
-            </Route>
+            <Route path="/appointment" element={<AppointmentPage />} />
             <Route path="/shop" element={<ShopLayout />}>
               <Route index element={<ShopPage />} />
             </Route>
