@@ -37,9 +37,8 @@ const Recommendation: React.FC = () => {
               <Flex
                 align="center"
                 justify="center"
-                gap="3"
                 key={comment[currentIndex].userName}
-                className="w-full lg:px-3 rounded-lg h-[280px] mb-10 bg-[#FAD046]"
+                className="w-full lg:px-3 rounded-lg h-[280px] gap-2 md:gap-10 lg:gap-3 md mb-10 bg-[#FAD046]"
               >
                 {/* Left Arrow Button */}
                 <Button
@@ -58,7 +57,6 @@ const Recommendation: React.FC = () => {
                     src={whiteDog}
                     alt="White cute hairy dog"
                     width="220px"
-                    className="bg-[#ECB93F] rounded-xl"
                   />
                 </Box>
 

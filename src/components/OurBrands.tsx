@@ -9,18 +9,18 @@ import bearing from "@/assets/svg/products/Bearing.svg";
 
 const OurBrands = () => {
   return (
-    <Box className="h-[350px] bg-[#E3462C]">
+    <Box className="h-[580px] md:h-[480px] bg-[#E3462C]">
       <Container>
         <Box>
-          <h1 className="text-2xl lg:text-4xl mx-auto md:my-4 lg:mb-14 text-center font-bold uppercase">
+          <h1 className="text-2xl lg:text-4xl mx-auto pt-10 md:my-4 lg:mb-14 text-center font-bold uppercase text-white">
             What our clients say about us
           </h1>
         </Box>
-        <Box className="mt-28">
+        <Box className="mt-10 md:mt-20">
           <Flex
             justify="between"
             align="center"
-            className=" h-[150px] rounded-md px-4 bg-white"
+            className="flex-wrap h-[460px] md:h-[300px] lg:h-[200px] rounded-md px-4 bg-white"
           >
             <img src={moderna} alt="Moderna brand" width="120px" />
             <img src={meO} alt="Me-o brand" width="120px" />
