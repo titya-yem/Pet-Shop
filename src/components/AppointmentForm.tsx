@@ -13,24 +13,39 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@radix-ui/react-popover";
+import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
+import axios from "axios";
 
 const AppointmentForm = () => {
   const { register, handleSubmit, reset } = useForm();
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [appointmentType, setAppointmentType] = useState("General Checkup");
 
-  const onSubmit = (data: any) => {
-    console.log({ ...data, appointmentType, selectedDate });
-    toast.success("Appointment booked successfully!", {
-      position: "bottom-right",
-    });
-    reset();
+  const onSubmit = async (data: any) => {
+    try {
+      await axios.post("backend endpoint", {
+        ...data,
+        appointmentType,
+        selectedDate,
+      }); // Send data to backend end point
+      toast.success("Appointment booked successfully!", {
+        position: "bottom-right",
+      });
+      reset(); // reset form as new afte subbmited
+    } catch (error) {
+      console.log(error);
+      toast.error("Error to book an appointment please contact us");
+    }
   };
 
   return (
-    <div className="bg-white p-6 shadow-lg rounded-xl w-full max-w-md">
+    <div className="bg-white p-6 shadow-lg rounded-r-xl w-full max-w-md">
       {/* Appointment Type Selection */}
+      <h2 className="text-2xl font-bold text-center mb-4">
+        Schedule an Appointment
+      </h2>
+
       <div className="flex gap-3 mb-4">
         {[
           "Vacation",
