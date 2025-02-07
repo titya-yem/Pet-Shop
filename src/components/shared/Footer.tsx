@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
           />
           <Text
             as="p"
-            className="w-2/3 text-sm md:text-base md:pl-3 text-center md:text-start text-white"
+            className="w-2/3 text-sm md:text-base md:pl-3 text-center mx-auto md:mx-0 md:text-start text-white"
           >
             Sign up to our newsletter to receive 5% off your first order!
           </Text>

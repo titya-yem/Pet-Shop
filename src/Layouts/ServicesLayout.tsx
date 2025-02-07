@@ -1,11 +1,13 @@
-import Navbar from "@/components/shared/Navbar";
-import { Outlet } from "react-router-dom";
+import Recommendation from "@/components/Recommendation";
+import Services from "@/components/Services";
+import { Outlet } from "react-router";
 
 const ServicesLayout = () => {
   return (
     <>
-      <Navbar />
       <Outlet />
+      <Services />
+      <Recommendation />
     </>
   );
 };
