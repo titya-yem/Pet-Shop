@@ -6,14 +6,14 @@ import AppointmentForm from "@/components/AppointmentForm";
 
 const AppointmentPage = () => {
   return (
-    <Box className="bg-[#e3462c]">
-      <Container>
+    <Box className=" bg-[#e3462c]">
+      <Container className="px-4">
         <Toaster />
         {/* Hero Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center mt-12">
-          <Box className="my-4 px-4 md:w-[56%]">
+        <div className="flex flex-col md:flex-row justify-between items-center relative top-12 lg:top-16">
+          <Box className="px-4 md:w-[56%]">
             <h1
-              className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl md:mb-16 text-white font-bold uppercase text-center md:text-left"
+              className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl lg:mb-20 text-white font-bold uppercase text-center md:text-left"
               style={{ WebkitTextStroke: "1.5px #950E00" }}
             >
               Book an Appointment with us today for your pets
@@ -30,19 +30,18 @@ const AppointmentPage = () => {
       </Container>
 
       {/* Appointment Booking Form Section */}
-      <div className="flex flex-col md:flex-row justify-center items-center py-20 bg-[#1F272B] relative bottom-16 z-[1]">
+      <div className="flex py-16 justify-center items-center bg-[#1F272B]">
         {/* Image */}
-        <Box className="md:mr-8">
+        <Box>
           <img
             src={aboutFormImage}
             alt="cute cat and dog sitting on a chair"
-            width="420"
-            className="mx-auto md:mx-0"
+            className="hidden lg:block w-[433px] mx-auto md:mx-0"
           />
         </Box>
 
         {/* Form */}
-        <Box className="mx-auto md:ml-8">
+        <Box>
           <AppointmentForm />
         </Box>
       </div>

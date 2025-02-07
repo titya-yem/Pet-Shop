@@ -9,16 +9,16 @@ export const NavbarLists: NavbarList[] = [
     link: "/",
   },
   {
-    label: "Appointment",
-    link: "/appointment",
-  },
-  {
     label: "Shop",
     link: "/shop",
   },
   {
     label: "Services",
     link: "/services",
+  },
+  {
+    label: "Appointment",
+    link: "/appointment",
   },
   {
     label: "Contact",

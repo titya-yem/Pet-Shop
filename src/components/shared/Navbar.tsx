@@ -1,7 +1,7 @@
 import { Box, Container, Flex } from "@radix-ui/themes";
 import logo from "@/assets/image/Logo.png";
 import { NavbarLists } from "../../constants/Navbar";
-import { Link } from "react-router";
+import { Link } from "react-router-dom"; // Ensure this is react-router-dom
 import {
   Sheet,
   SheetContent,
@@ -10,16 +10,21 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import toggle from "@/assets/svg/Toggle.svg";
-import SearchIcon from "@/assets/svg/SearchIcon.svg";
 import ShoppingBag from "@/assets/svg/ShoppingBag.svg";
-import { Button } from "../ui/button";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import { useState } from "react";
 
 const Navbar = () => {
   const totalQuantity = useSelector(
     (state: RootState) => state.cart.totalQuantity
   );
+
+  const [isSheetOpen, setIsSheetOpen] = useState<boolean>(false);
+
+  const closeSheet = () => {
+    setIsSheetOpen(false);
+  };
 
   return (
     <>
@@ -37,15 +42,6 @@ const Navbar = () => {
                 </li>
               </ul>
             ))}
-            <Button className="bg-transparent hover:bg-transparent shadow-none px-0">
-              <img
-                src={SearchIcon}
-                alt="search"
-                width={25}
-                className="hidden md:inline-block invert pb-3"
-              />
-            </Button>
-
             <Link to="/cart" className="relative">
               <img
                 src={ShoppingBag}
@@ -61,7 +57,7 @@ const Navbar = () => {
             </Link>
 
             {/* Mobile Navbar */}
-            <Sheet>
+            <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger>
                 <img
                   src={toggle}
@@ -78,7 +74,10 @@ const Navbar = () => {
                   <Box className="text-center space-y-2">
                     {NavbarLists.map((list) => (
                       <ul key={list.link}>
-                        <li className="hover:font-medium duration-200 hover:bg-[#e3462c] rounded-lg p-2 hover:text-white">
+                        <li
+                          className="hover:font-medium duration-200 hover:bg-[#e3462c] rounded-lg p-2 hover:text-white"
+                          onClick={closeSheet}
+                        >
                           <Link to={list.link}>{list.label}</Link>
                         </li>
                       </ul>

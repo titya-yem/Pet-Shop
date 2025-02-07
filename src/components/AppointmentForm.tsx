@@ -1,9 +1,5 @@
-import {
-  FaCalendarAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaUser,
-} from "react-icons/fa";
+import { FaCalendarAlt, FaEnvelope, FaClock, FaUser } from "react-icons/fa";
+
 import { Button } from "@/components/ui/button";
 import toast from "react-hot-toast";
 import { useState } from "react";
@@ -15,7 +11,8 @@ import {
 } from "@radix-ui/react-popover";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
-import axios from "axios";
+// import axios from "axios";
+import { Box } from "@radix-ui/themes";
 
 const AppointmentForm = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -24,13 +21,18 @@ const AppointmentForm = () => {
 
   const onSubmit = async (data: any) => {
     try {
-      await axios.post("backend endpoint", {
+      // await axios.post("backend endpoint", {
+      //   ...data,
+      //   appointmentType,
+      //   selectedDate,
+      // }); Send data to backend end point
+      console.log({
         ...data,
         appointmentType,
         selectedDate,
-      }); // Send data to backend end point
+      });
       toast.success("Appointment booked successfully!", {
-        position: "bottom-right",
+        position: "top-center",
       });
       reset(); // reset form as new afte subbmited
     } catch (error) {
@@ -39,21 +41,23 @@ const AppointmentForm = () => {
     }
   };
 
+  const serviceCategories: string[] = [
+    "Vacation",
+    "Bathing",
+    "Cut and Trim",
+    "Food & Supplies",
+    "Party",
+  ];
+
   return (
-    <div className="bg-white p-6 shadow-lg rounded-r-xl w-full max-w-md">
+    <div className="w-[340px] md:w-[450px] p-6 shadow-lg rounded-lg lg:rounded-l-none max-w-md bg-white">
       {/* Appointment Type Selection */}
       <h2 className="text-2xl font-bold text-center mb-4">
         Schedule an Appointment
       </h2>
 
-      <div className="flex gap-3 mb-4">
-        {[
-          "Vacation",
-          "Bathing",
-          "Cut and Trim",
-          "Food & Supplies",
-          "Party",
-        ].map((type) => (
+      <div className="flex flex-wrap justify-center items-center gap-3 mb-4">
+        {serviceCategories.map((type) => (
           <button
             key={type}
             className={`px-4 py-2 border rounded-lg text-sm transition-all ${
@@ -70,53 +74,55 @@ const AppointmentForm = () => {
 
       {/* Form */}
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
-        <div className="relative">
-          <FaUser className="absolute left-3 top-3 text-gray-400" />
-          <input
-            {...register("name")}
-            type="text"
-            placeholder="Your name"
-            className="pl-10 w-full p-3 border rounded-lg"
-            required
-          />
+        <div className="space-y-4">
+          <Box className="relative">
+            <FaUser className="absolute left-3 top-4 text-gray-400" />
+            <input
+              {...register("name")}
+              type="text"
+              placeholder="Your name"
+              className="w-full pl-10 p-3 text-sm md:text-base border rounded-lg"
+              required
+            />
+          </Box>
+
+          <Box className="relative">
+            <FaEnvelope className="absolute left-3 top-4 text-gray-400" />
+            <input
+              {...register("email")}
+              type="email"
+              placeholder="Email address"
+              className="w-full pl-10 p-3 text-sm md:text-base border rounded-lg"
+              required
+            />
+          </Box>
         </div>
 
-        <div className="relative">
-          <FaEnvelope className="absolute left-3 top-3 text-gray-400" />
+        <Box className="relative">
+          <FaClock className="absolute left-3 top-4 text-gray-400" />
           <input
-            {...register("email")}
-            type="email"
-            placeholder="Email address"
-            className="pl-10 w-full p-3 border rounded-lg"
+            {...register("time")}
+            type="time"
+            placeholder="Select Time"
+            className="w-full pl-10 p-3 text-sm md:text-base border rounded-lg"
             required
           />
-        </div>
-
-        <div className="relative">
-          <FaMapMarkerAlt className="absolute left-3 top-3 text-gray-400" />
-          <input
-            {...register("city")}
-            type="text"
-            placeholder="Select a city"
-            className="pl-10 w-full p-3 border rounded-lg"
-            required
-          />
-        </div>
+        </Box>
 
         {/* Date Picker */}
         <Popover>
           <PopoverTrigger asChild>
-            <div className="relative cursor-pointer">
-              <FaCalendarAlt className="absolute left-3 top-3 text-gray-400" />
+            <Box className="relative cursor-pointer">
+              <FaCalendarAlt className="absolute left-3 top-4 text-gray-400" />
               <input
                 type="text"
                 readOnly
                 value={selectedDate ? selectedDate.toLocaleDateString() : ""}
-                className="pl-10 w-full p-3 border rounded-lg cursor-pointer"
+                className="w-full pl-10 last: p-3 text-sm md:text-base border rounded-lg cursor-pointer"
               />
-            </div>
+            </Box>
           </PopoverTrigger>
-          <PopoverContent className="bg-white p-2 shadow-md rounded-lg">
+          <PopoverContent className="p-2 shadow-md rounded-lg bg-white">
             <DatePicker
               selected={selectedDate}
               onChange={(date) => setSelectedDate(date)}
@@ -128,7 +134,7 @@ const AppointmentForm = () => {
         <textarea
           {...register("message")}
           placeholder="Additional message"
-          className="w-full p-3 border rounded-lg"
+          className="w-full p-3 text-sm md:text-base border rounded-lg"
         />
 
         <Button

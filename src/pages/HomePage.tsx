@@ -16,11 +16,11 @@ const HomePage = () => {
           >
             We are always here for all your pet's good health
           </h1>
-          <Flex className="flex-col md:flex-row gap-4">
+          <Flex className="flex flex-col md:flex-row gap-4 md:gap-0">
             <LinkButton
               name="Shop Now"
               link="shop"
-              className="w-full px-8 py-6 lg:px-12 bg-[#362626]"
+              className="w-full py-6 lg:px-12 bg-[#362626]"
             />
             <Phone title="Schedule a Call" link="appointment" />
           </Flex>

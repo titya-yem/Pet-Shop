@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
           />
           <Text
             as="p"
-            className="text-sm md:text-base md:pl-3 text-center text-white"
+            className="w-2/3 text-sm md:text-base md:pl-3 text-center md:text-start text-white"
           >
             Sign up to our newsletter to receive 5% off your first order!
           </Text>
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
               type="email"
               name="Email Address"
               placeholder="Your Email Address"
-              className="w-[250px] pl-2 py-3 rounded-l-lg focus:outline-none"
+              className="md:w-[250px] text-sm md:text-base px-4 py-[14px] md:py-3 rounded-l-lg focus:outline-none"
             />
             <Button
               type="submit"
@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
         </Box>
       </div>
       <img src={line} alt="footer-line" className="mt-8 mb-6" />
-      <Text as="p" className="text-sm pl-3">
+      <Text as="p" className="text-sm text-center md:text-start md:pl-3">
         Copyright by Pet Shop. (Titya Yem)
       </Text>
     </Container>
