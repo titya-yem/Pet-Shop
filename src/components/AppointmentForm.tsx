@@ -1,5 +1,4 @@
 import { FaCalendarAlt, FaEnvelope, FaClock, FaUser } from "react-icons/fa";
-
 import { Button } from "@/components/ui/button";
 import toast from "react-hot-toast";
 import { useState } from "react";
@@ -52,7 +51,7 @@ const AppointmentForm = () => {
   return (
     <div className="w-[340px] md:w-[450px] p-6 shadow-lg rounded-lg lg:rounded-l-none max-w-md bg-white">
       {/* Appointment Type Selection */}
-      <h2 className="text-2xl font-bold text-center mb-4">
+      <h2 className="text-2xl font-bold text-center pb-[17px]">
         Schedule an Appointment
       </h2>
 
@@ -139,7 +138,7 @@ const AppointmentForm = () => {
 
         <Button
           type="submit"
-          className="bg-blue-500 text-white p-3 rounded-lg w-full"
+          className="bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-lg w-full"
         >
           Book appointment
         </Button>

@@ -1,7 +1,7 @@
 import dollarCircle from "@/assets/svg/DollarCircle.svg";
 import { serviceLists } from "@/constants/service";
 import { Box, Container, Flex, Text } from "@radix-ui/themes";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { Link } from "react-router";
 
 interface ServicesCardsProps {

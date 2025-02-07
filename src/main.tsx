@@ -13,7 +13,6 @@ import ShopLayout from "./Layouts/ShopLayout.tsx";
 import ShopPage from "./pages/ShopPage.tsx";
 import ServicesLayout from "./Layouts/ServicesLayout.tsx";
 import ServicesPage from "./pages/ServicesPage.tsx";
-import ContactLayout from "./Layouts/ContactLayout.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
 import Navbar from "./components/shared/Navbar.tsx";
 import Footer from "./components/shared/Footer.tsx";
@@ -35,9 +34,7 @@ createRoot(document.getElementById("root")!).render(
             <Route path="/services" element={<ServicesLayout />}>
               <Route index element={<ServicesPage />} />
             </Route>
-            <Route path="/contact" element={<ContactLayout />}>
-              <Route index element={<ContactPage />} />
-            </Route>
+            <Route path="/contact" element={<ContactPage />} />
           </Routes>
           <Footer />
         </BrowserRouter>
