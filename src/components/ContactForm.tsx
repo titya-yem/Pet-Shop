@@ -1,7 +1,8 @@
-import { Box, Button } from "@radix-ui/themes";
+import { Box } from "@radix-ui/themes";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { FaPhoneAlt, FaEnvelope, FaClock, FaUser } from "react-icons/fa";
+import { Button } from "./ui/button";
 
 const ContactForm = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -85,7 +86,7 @@ const ContactForm = () => {
 
         <Button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-lg w-full"
+          className="bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-lg w-full"
         >
           Send
         </Button>

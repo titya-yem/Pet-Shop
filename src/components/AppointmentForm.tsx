@@ -43,13 +43,13 @@ const AppointmentForm = () => {
   const serviceCategories: string[] = [
     "Vacation",
     "Bathing",
-    "Cut and Trim",
+    "Cut and Trim hair",
     "Food & Supplies",
     "Party",
   ];
 
   return (
-    <div className="w-[340px] md:w-[450px] p-6 shadow-lg rounded-lg lg:rounded-l-none max-w-md bg-white">
+    <div className="w-[340px] md:w-[450px] h-[590px] p-6 shadow-lg rounded-lg lg:rounded-l-none max-w-md bg-white">
       {/* Appointment Type Selection */}
       <h2 className="text-2xl font-bold text-center pb-[17px]">
         Schedule an Appointment
@@ -97,38 +97,40 @@ const AppointmentForm = () => {
           </Box>
         </div>
 
-        <Box className="relative">
-          <FaClock className="absolute left-3 top-4 text-gray-400" />
-          <input
-            {...register("time")}
-            type="time"
-            placeholder="Select Time"
-            className="w-full pl-10 p-3 text-sm md:text-base border rounded-lg"
-            required
-          />
-        </Box>
-
-        {/* Date Picker */}
-        <Popover>
-          <PopoverTrigger asChild>
-            <Box className="relative cursor-pointer">
-              <FaCalendarAlt className="absolute left-3 top-4 text-gray-400" />
-              <input
-                type="text"
-                readOnly
-                value={selectedDate ? selectedDate.toLocaleDateString() : ""}
-                className="w-full pl-10 last: p-3 text-sm md:text-base border rounded-lg cursor-pointer"
-              />
-            </Box>
-          </PopoverTrigger>
-          <PopoverContent className="p-2 shadow-md rounded-lg bg-white">
-            <DatePicker
-              selected={selectedDate}
-              onChange={(date) => setSelectedDate(date)}
-              inline
+        <div className="flex justify-center items-center gap-4">
+          <Box className="relative">
+            <FaClock className="absolute left-3 top-4 text-gray-400" />
+            <input
+              {...register("time")}
+              type="time"
+              placeholder="Select Time"
+              className="w-[190px] pl-10 p-3 text-sm md:text-base border rounded-lg"
+              required
             />
-          </PopoverContent>
-        </Popover>
+          </Box>
+
+          {/* Date Picker */}
+          <Popover>
+            <PopoverTrigger asChild>
+              <Box className="relative cursor-pointer">
+                <FaCalendarAlt className="absolute left-3 top-4 text-gray-400" />
+                <input
+                  type="text"
+                  readOnly
+                  value={selectedDate ? selectedDate.toLocaleDateString() : ""}
+                  className="w-full pl-10 last: p-3 text-sm md:text-base border rounded-lg cursor-pointer"
+                />
+              </Box>
+            </PopoverTrigger>
+            <PopoverContent className="p-2 shadow-md rounded-lg bg-white">
+              <DatePicker
+                selected={selectedDate}
+                onChange={(date) => setSelectedDate(date)}
+                inline
+              />
+            </PopoverContent>
+          </Popover>
+        </div>
 
         <textarea
           {...register("message")}
