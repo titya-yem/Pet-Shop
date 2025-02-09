@@ -1,14 +1,20 @@
 import { Box, Container, Text } from "@radix-ui/themes";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Button } from "./ui/button";
+import { removeFromCart } from "@/slices/Cart-Slice";
 
 const Cart = () => {
   const cart = useSelector((state: any) => state.cart);
+  const dispatch = useDispatch();
 
   const totalPrice = cart.items.reduce(
     (total: number, item: any) => total + item.price * item.quantity,
     0
   );
+
+  const handleRemoveItem = (itemId: number) => {
+    dispatch(removeFromCart(itemId));
+  };
 
   return (
     <Box className="bg-[#1F272B] min-h-screen">
@@ -20,7 +26,6 @@ const Cart = () => {
             Total Items: {cart.totalQuantity}
           </Text>
         </div>
-
         {/* Cart Items List */}
         {cart.items.length === 0 ? (
           <Text as="p" className="text-center text-gray-500">
@@ -49,7 +54,6 @@ const Cart = () => {
                     </Text>
                   </div>
                 </div>
-
                 {/* Quantity and Subtotal */}
                 <div className="flex items-center gap-4">
                   <Text as="p" className="text-gray-600">
@@ -59,11 +63,17 @@ const Cart = () => {
                     ${(item.price * item.quantity).toFixed(2)}
                   </Text>
                 </div>
+                {/* Remove Button */}
+                <Button
+                  className="px-4 py-2 bg-red-500 text-white hover:bg-red-600"
+                  onClick={() => handleRemoveItem(item.id)} // Call the remove function
+                >
+                  Remove
+                </Button>
               </div>
             ))}
           </div>
         )}
-
         {/* Total Price Section */}
         <div className="mt-8 border-t border-gray-200 pt-6 flex justify-between items-center">
           <Text as="p" className="text-xl font-bold text-[#1F272B]">
@@ -73,7 +83,6 @@ const Cart = () => {
             ${totalPrice.toFixed(2)}
           </Text>
         </div>
-
         {/* Checkout Button */}
         <div className="mt-6 flex justify-end">
           <Button
