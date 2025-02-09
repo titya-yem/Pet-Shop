@@ -1,7 +1,7 @@
 import { Box, Container, Flex } from "@radix-ui/themes";
 import logo from "@/assets/image/Logo.png";
 import { NavbarLists } from "../../constants/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom"; // Import useLocation
 import {
   Sheet,
   SheetContent,
@@ -33,6 +33,9 @@ const Navbar = () => {
     (item) => item.label !== "Cart"
   );
 
+  // Get the current location
+  const location = useLocation();
+
   return (
     <>
       <Container className="bg-[#e3462c]">
@@ -44,12 +47,17 @@ const Navbar = () => {
             {/* Desktop Navbar */}
             {desktopNavbarLists.map((list) => (
               <ul key={list.link}>
-                <li className="hidden md:flex text-white hover:font-medium duration-200">
+                <li
+                  className={`hidden md:flex text-white hover:font-medium duration-200 ${
+                    location.pathname === list.link
+                      ? "underline underline-offset-4 font-medium"
+                      : ""
+                  }`}
+                >
                   <Link to={list.link}>{list.label}</Link>
                 </li>
               </ul>
             ))}
-            {/* Cart Icon for Desktop */}
             <Link to="/cart" className="relative">
               <img
                 src={ShoppingBag}
@@ -93,7 +101,11 @@ const Navbar = () => {
                     {NavbarLists.map((list) => (
                       <ul key={list.link}>
                         <li
-                          className="hover:font-medium duration-200 hover:bg-[#e3462c] rounded-lg p-2 hover:text-white"
+                          className={`hover:font-medium duration-200 hover:bg-[#e3462c] rounded-lg p-2 hover:text-white ${
+                            location.pathname === list.link
+                              ? "underline underline-offset-4 font-medium"
+                              : ""
+                          }`}
                           onClick={closeSheet}
                         >
                           <Link to={list.link}>{list.label}</Link>
