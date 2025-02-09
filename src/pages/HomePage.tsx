@@ -10,10 +10,7 @@ const HomePage = () => {
         {/* Left Content */}
 
         <Box className="space-y-8 md:w-[45%] lg:w-1/2">
-          <h1
-            className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white font-bold uppercase text-center md:text-left"
-            style={{ WebkitTextStroke: "1.5px #950E00" }}
-          >
+          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-white font-bold uppercase text-center md:text-left">
             We are always here for all your pet's good health
           </h1>
           <Flex className="flex flex-col md:flex-row gap-4 md:gap-0">

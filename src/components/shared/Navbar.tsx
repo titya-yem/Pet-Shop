@@ -41,7 +41,9 @@ const Navbar = () => {
       <Container className="bg-[#e3462c]">
         <Flex justify="between" align="center" className="py-4 px-4">
           <Box>
-            <img src={logo} alt="Pet Shop logo" width={80} height={80} />
+            <Link to="/">
+              <img src={logo} alt="Pet Shop logo" width={80} height={80} />
+            </Link>
           </Box>
           <Flex gap="5">
             {/* Desktop Navbar */}

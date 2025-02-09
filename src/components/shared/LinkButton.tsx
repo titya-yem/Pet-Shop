@@ -1,4 +1,5 @@
-import { Link } from "react-router";
+// LinkButton.js
+import { Link } from "react-router-dom"; // Ensure this is react-router-dom
 import { Button } from "../ui/button";
 
 interface LinkButtonProps {

@@ -19,6 +19,7 @@ import Footer from "./components/shared/Footer.tsx";
 import ProductDetailPage from "./components/ProductDetials.tsx";
 import Cart from "./components/Cart.tsx";
 import { ClerkProvider } from "@clerk/clerk-react";
+import ScrollToTop from "./components/ScrollToTop.tsx";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -32,6 +33,7 @@ createRoot(document.getElementById("root")!).render(
       <Provider store={store}>
         <Theme appearance="inherit">
           <BrowserRouter>
+            <ScrollToTop />
             <Navbar />
             <Routes>
               <Route path="/" element={<RootLayout />}>
