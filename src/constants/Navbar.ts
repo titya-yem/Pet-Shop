@@ -24,4 +24,8 @@ export const NavbarLists: NavbarList[] = [
     label: "Contact",
     link: "/contact",
   },
+  {
+    label: "Cart",
+    link: "/cart",
+  },
 ];

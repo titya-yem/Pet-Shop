@@ -36,7 +36,7 @@ export const Products: Product[] = [
     id: 2,
     name: "Organic Wet Cat Food",
     category: "cat",
-    price: 24.99,
+    price: 19.99,
     rating: 4.5,
     reviews: 87,
     description:
@@ -47,7 +47,7 @@ export const Products: Product[] = [
     id: 3,
     name: "Timothy Hay for Rabbits",
     category: "rabbit",
-    price: 19.99,
+    price: 24.99,
     rating: 4.8,
     reviews: 201,
     description:

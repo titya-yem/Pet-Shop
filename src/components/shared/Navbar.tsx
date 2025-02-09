@@ -1,7 +1,7 @@
 import { Box, Container, Flex } from "@radix-ui/themes";
 import logo from "@/assets/image/Logo.png";
 import { NavbarLists } from "../../constants/Navbar";
-import { Link } from "react-router-dom"; // Ensure this is react-router-dom
+import { Link } from "react-router-dom";
 import {
   Sheet,
   SheetContent,
@@ -19,12 +19,14 @@ const Navbar = () => {
   const totalQuantity = useSelector(
     (state: RootState) => state.cart.totalQuantity
   );
-
   const [isSheetOpen, setIsSheetOpen] = useState<boolean>(false);
-
   const closeSheet = () => {
     setIsSheetOpen(false);
   };
+
+  const desktopNavbarLists = NavbarLists.filter(
+    (item) => item.label !== "Cart"
+  );
 
   return (
     <>
@@ -35,13 +37,14 @@ const Navbar = () => {
           </Box>
           <Flex gap="5">
             {/* Desktop Navbar */}
-            {NavbarLists.map((list) => (
+            {desktopNavbarLists.map((list) => (
               <ul key={list.link}>
                 <li className="hidden md:flex text-white hover:font-medium duration-200">
                   <Link to={list.link}>{list.label}</Link>
                 </li>
               </ul>
             ))}
+            {/* Cart Icon for Desktop */}
             <Link to="/cart" className="relative">
               <img
                 src={ShoppingBag}
@@ -55,7 +58,6 @@ const Navbar = () => {
                 </span>
               )}
             </Link>
-
             {/* Mobile Navbar */}
             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger>
