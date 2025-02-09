@@ -27,7 +27,7 @@ const ServicesPage = () => {
             <span className="text-[#2F398B]">but here</span>
           </Text>
 
-          <Box className="w-[90%] mx-auto md:mx-0 py-6 rounded-lg md:bg-white">
+          <Box className="w-[90%] mx-auto md:mx-0 md:py-6 rounded-lg md:bg-white">
             <div className=" flex flex-wrap items-center justify-center gap-4">
               <FaCalendarAlt className="text-[#2F398B]" />
               <Link to="/appointment">

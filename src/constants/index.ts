@@ -45,7 +45,7 @@ export const Products: Product[] = [
   },
   {
     id: 3,
-    name: "Timothy Hay for Rabbits",
+    name: "Hay for Rabbits",
     category: "rabbit",
     price: 24.99,
     rating: 4.8,
@@ -89,7 +89,7 @@ export const Products: Product[] = [
   },
   {
     id: 7,
-    name: "Salmon & Tuna Cat Food",
+    name: "Salmon Tuna Cat Food",
     category: "cat",
     price: 27.99,
     rating: 4.7,
