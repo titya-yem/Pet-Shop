@@ -16,33 +16,42 @@ import ServicesPage from "./pages/ServicesPage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
 import Navbar from "./components/shared/Navbar.tsx";
 import Footer from "./components/shared/Footer.tsx";
-import ProductDetials from "./components/ProductDetials.tsx";
+import ProductDetailPage from "./components/ProductDetials.tsx";
 import Cart from "./components/Cart.tsx";
+import { ClerkProvider } from "@clerk/clerk-react";
+
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key");
+}
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Provider store={store}>
-      <Theme appearance="inherit">
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<RootLayout />}>
-              <Route index element={<HomePage />} />
-            </Route>
-            <Route path="/appointment" element={<AppointmentPage />} />
-            <Route path="/shop" element={<ShopLayout />}>
-              <Route index element={<ShopPage />} />
-              <Route path=":slug" element={<ProductDetials />} />
-            </Route>
-            <Route path="/services" element={<ServicesLayout />}>
-              <Route index element={<ServicesPage />} />
-            </Route>
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </Theme>
-    </Provider>
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+      <Provider store={store}>
+        <Theme appearance="inherit">
+          <BrowserRouter>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<RootLayout />}>
+                <Route index element={<HomePage />} />
+              </Route>
+              <Route path="/appointment" element={<AppointmentPage />} />
+              <Route path="/shop" element={<ShopLayout />}>
+                <Route index element={<ShopPage />} />
+                <Route path=":slug" element={<ProductDetailPage />} />
+              </Route>
+              <Route path="/services" element={<ServicesLayout />}>
+                <Route index element={<ServicesPage />} />
+              </Route>
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/cart" element={<Cart />} />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </Theme>
+      </Provider>
+    </ClerkProvider>
   </StrictMode>
 );

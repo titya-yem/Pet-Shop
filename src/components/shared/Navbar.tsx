@@ -14,6 +14,12 @@ import ShoppingBag from "@/assets/svg/ShoppingBag.svg";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { useState } from "react";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/clerk-react";
 
 const Navbar = () => {
   const totalQuantity = useSelector(
@@ -23,7 +29,6 @@ const Navbar = () => {
   const closeSheet = () => {
     setIsSheetOpen(false);
   };
-
   const desktopNavbarLists = NavbarLists.filter(
     (item) => item.label !== "Cart"
   );
@@ -58,6 +63,17 @@ const Navbar = () => {
                 </span>
               )}
             </Link>
+            <SignedOut>
+              <SignInButton mode="modal">
+                <button className="hover:font-medium text-white duration-200">
+                  Sign In
+                </button>
+              </SignInButton>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+
             {/* Mobile Navbar */}
             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger>
@@ -84,6 +100,16 @@ const Navbar = () => {
                         </li>
                       </ul>
                     ))}
+                    <SignedOut>
+                      <SignInButton mode="modal">
+                        <button className="text-white hover:font-medium duration-200 w-full text-center py-2 rounded-lg hover:bg-[#e3462c]">
+                          Sign In
+                        </button>
+                      </SignInButton>
+                    </SignedOut>
+                    <SignedIn>
+                      <UserButton />
+                    </SignedIn>
                   </Box>
                 </SheetHeader>
               </SheetContent>
