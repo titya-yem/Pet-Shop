@@ -58,7 +58,7 @@ const ProductDetailPage = () => {
             </Box>
             {/* Product Details Section */}
             <Box className="w-full md:w-1/3 space-y-4">
-              <h1 className="text-2xl text-center font-bold text-[#1F276C]">
+              <h1 className="text-2xl text-center md:text-start font-bold text-[#1F276C]">
                 {product.name}
               </h1>
               <div className="flex items-center gap-2">

@@ -99,12 +99,11 @@ const AppointmentForm = () => {
 
         <div className="flex justify-center items-center gap-4">
           <Box className="relative">
-            <FaClock className="absolute left-3 top-4 text-gray-400" />
             <input
               {...register("time")}
               type="time"
               placeholder="Select Time"
-              className="w-[190px] pl-10 p-3 text-sm md:text-base border rounded-lg"
+              className="w-[145px] md:w-[190px] pl-10 p-3 text-sm md:text-base border rounded-lg"
               required
             />
           </Box>
@@ -135,7 +134,7 @@ const AppointmentForm = () => {
         <textarea
           {...register("message")}
           placeholder="Additional message"
-          className="w-full p-3 text-sm md:text-base border rounded-lg"
+          className="w-full max-h-[140px] p-3 text-sm md:text-base border rounded-lg"
         />
 
         <Button

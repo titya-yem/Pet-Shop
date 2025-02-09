@@ -12,10 +12,7 @@ const AppointmentPage = () => {
         {/* Hero Section */}
         <div className="flex flex-col md:flex-row justify-between items-center relative top-12 lg:top-16">
           <Box className="px-4 md:w-[56%]">
-            <h1
-              className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl lg:mb-20 text-white font-bold uppercase text-center md:text-left"
-              style={{ WebkitTextStroke: "1.5px #950E00" }}
-            >
+            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl lg:mb-20 text-white font-bold uppercase text-center md:text-left">
               Book an Appointment with us today for your pets
             </h1>
           </Box>

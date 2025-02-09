@@ -81,7 +81,7 @@ const ContactForm = () => {
         <textarea
           {...register("message")}
           placeholder="Additional message"
-          className="w-full p-3 text-sm md:text-base border rounded-lg"
+          className="w-full max-h-[200px] p-3 text-sm md:text-base border rounded-lg"
         />
 
         <Button

@@ -55,7 +55,7 @@ const Cart = () => {
                   </div>
                 </div>
                 {/* Quantity and Subtotal */}
-                <div className="flex items-center gap-4">
+                <div className="flex justify-center items-center gap-4">
                   <Text as="p" className="text-gray-600">
                     Qty: {item.quantity}
                   </Text>
@@ -65,7 +65,7 @@ const Cart = () => {
                 </div>
                 {/* Remove Button */}
                 <Button
-                  className="px-4 py-2 bg-red-500 text-white hover:bg-red-600"
+                  className="hidden md:block px-4 py-2 bg-red-500 text-white hover:bg-red-600"
                   onClick={() => handleRemoveItem(item.id)} // Call the remove function
                 >
                   Remove
