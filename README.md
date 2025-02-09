@@ -4,4 +4,5 @@
 
 This website is about the front-end of the pet shop website that sells foods and services for pets, foods and services may change depends on real database or API. click on this Link to see the project: https://pet-shop-pi-two.vercel.app/
 
-![New Project](https://github.com/user-attachments/assets/f8187281-aa38-443a-b1e3-7ca70db677d0)
+
+![New Project](https://github.com/user-attachments/assets/8b190fc0-54c8-4b61-a18b-5ba8c5b5f3b1)
