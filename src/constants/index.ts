@@ -9,13 +9,15 @@ import rabbitPellets from "@/assets/image/data/Rabbit Pellets.jpg";
 import foodBlend from "@/assets/image/data/Exotic Bird Food Blend.jpg";
 import fishPellets from "@/assets/image/data/Tropical Fish Pellets.jpg";
 
-export type Product = {
+type Product = {
   id: number;
   name: string;
   category: string;
   price: number;
   rating: number;
   image: string;
+  reviews?: number;
+  description?: string;
 };
 
 export const Products: Product[] = [
@@ -25,6 +27,9 @@ export const Products: Product[] = [
     category: "dog",
     price: 29.99,
     rating: 4.7,
+    reviews: 132,
+    description:
+      "High-quality kibble made with real chicken and wholesome grains, perfect for active dogs.",
     image: dogKibble,
   },
   {
@@ -33,6 +38,9 @@ export const Products: Product[] = [
     category: "cat",
     price: 24.99,
     rating: 4.5,
+    reviews: 87,
+    description:
+      "Delicious organic wet food packed with nutrients for your feline friend.",
     image: catFood,
   },
   {
@@ -41,6 +49,9 @@ export const Products: Product[] = [
     category: "rabbit",
     price: 19.99,
     rating: 4.8,
+    reviews: 201,
+    description:
+      "Fresh Timothy hay to support your rabbit's digestive health and dental hygiene.",
     image: rabbitHay,
   },
   {
@@ -49,6 +60,9 @@ export const Products: Product[] = [
     category: "bird",
     price: 14.99,
     rating: 4.6,
+    reviews: 112,
+    description:
+      "A nutritious blend of seeds and grains to keep your birds happy and healthy.",
     image: seedMix,
   },
   {
@@ -57,6 +71,9 @@ export const Products: Product[] = [
     category: "fish",
     price: 9.99,
     rating: 4.4,
+    reviews: 45,
+    description:
+      "High-quality flakes designed to provide balanced nutrition for goldfish.",
     image: fishFlakes,
   },
   {
@@ -65,6 +82,9 @@ export const Products: Product[] = [
     category: "dog",
     price: 15.99,
     rating: 4.9,
+    reviews: 178,
+    description:
+      "Grain-free treats made with natural ingredients, ideal for sensitive dogs.",
     image: dogTreat,
   },
   {
@@ -73,6 +93,9 @@ export const Products: Product[] = [
     category: "cat",
     price: 27.99,
     rating: 4.7,
+    reviews: 156,
+    description:
+      "Delicious wet food made with real salmon and tuna, rich in omega-3 fatty acids.",
     image: fishCatFood,
   },
   {
@@ -81,6 +104,9 @@ export const Products: Product[] = [
     category: "rabbit",
     price: 21.99,
     rating: 4.6,
+    reviews: 94,
+    description:
+      "Nutritious pellets designed to support your rabbit's digestive health.",
     image: rabbitPellets,
   },
   {
@@ -89,6 +115,9 @@ export const Products: Product[] = [
     category: "bird",
     price: 18.99,
     rating: 4.8,
+    reviews: 98,
+    description:
+      "A premium blend of seeds, nuts, and fruits for exotic birds like parrots and cockatiels.",
     image: foodBlend,
   },
   {
@@ -97,6 +126,9 @@ export const Products: Product[] = [
     category: "fish",
     price: 12.99,
     rating: 4.5,
+    reviews: 67,
+    description:
+      "Specially formulated pellets for tropical fish to promote vibrant colors and health.",
     image: fishPellets,
   },
 ];

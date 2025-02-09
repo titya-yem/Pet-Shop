@@ -16,6 +16,7 @@ import ServicesPage from "./pages/ServicesPage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
 import Navbar from "./components/shared/Navbar.tsx";
 import Footer from "./components/shared/Footer.tsx";
+import ProductDetials from "./components/ProductDetials.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -30,6 +31,7 @@ createRoot(document.getElementById("root")!).render(
             <Route path="/appointment" element={<AppointmentPage />} />
             <Route path="/shop" element={<ShopLayout />}>
               <Route index element={<ShopPage />} />
+              <Route path=":slug" element={<ProductDetials />} />
             </Route>
             <Route path="/services" element={<ServicesLayout />}>
               <Route index element={<ServicesPage />} />
